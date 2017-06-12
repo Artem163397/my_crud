@@ -22,5 +22,6 @@
   "license": "MIT",
   "support": {
     "issues": "https://github.com/almasaeed2010/AdminLTE/issues"
-  }
+  },
+  "minimum-stability": "dev"
 }
