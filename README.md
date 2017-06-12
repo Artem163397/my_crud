@@ -1,6 +1,7 @@
-composer require artem163397/my_crud "dev-master" /n
-В файле config/web.php 
-В конце заменить
+composer require artem163397/my_crud "dev-master" 
+
+В файле config/web.php. В конце заменить
+
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
