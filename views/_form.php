@@ -29,6 +29,7 @@ use yii\widgets\ActiveForm;
 			<?= "<?php " ?>$form = ActiveForm::begin([
                 'id' => 'order-form',
                 'enableAjaxValidation' => true,
+                'validationUrl' => ['<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/validate'],
             ]); ?>
 
 <?php foreach ($generator->getColumnNames() as $attribute) {
