@@ -5,6 +5,7 @@
 
 use yii\db\ActiveRecordInterface;
 use yii\helpers\StringHelper;
+use yii\widgets\ActiveForm;
 
 
 /* @var $this yii\web\View */
@@ -109,6 +110,21 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     }
 
     /**
+     * Validate a Cities model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionValidate()
+    {
+        $model = new <?= $modelClass ?>();
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+    }
+
+    /**
      * Creates a new <?= $modelClass ?> model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -157,6 +173,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
 
         return $this->redirect(['index']);
     }
+
 
     /**
      * Finds the <?= $modelClass ?> model based on its primary key value.
